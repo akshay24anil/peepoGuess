@@ -8,4 +8,4 @@ The idea for peepoGuess came from watching [xQcOW](https://www.twitch.tv/xqcow) 
 ## How to play
 Streamers should enter their Twitch channel's name in the input box on the left panel. Clicking start will open a new tab with two buttons and an input box. Clicking the "Reveal word choices" button will reveal two randomly selected words the streamer can choose to draw. The reveal button prevents options from being leaked to chatters. Clicking one of the two options will close the current tab and begin the game. Users have the option of using a custom word by using the input box.
 
-Streamers have 45 seconds to draw the word they chose.
+Streamers have 30 seconds to draw the word they chose.
