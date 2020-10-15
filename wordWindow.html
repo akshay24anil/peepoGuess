@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>peepoGuess</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script type="text/javascript" src="https://unpkg.com/twitch-js@>2.0.0-beta.31"></script>
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.11.0/underscore-min.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/wordWindow.js"></script>
+</head>
+
+<body>
+    <button id="revealButton" onclick="revealChoices()">Reveal word choices</button>
+    <button id="choiceOne" onclick="userSelected(1)" style="display: none;">Option 1</button>
+    <button id="choiceTwo" onclick="userSelected(2)" style="display: none;">Option 2</button>
+    <input type="text" id="customChoice" placeholder="Enter a custom option">
+    <button type="button" onclick="userSelected(3)">Submit</button>
+</body>
+
+</html>
