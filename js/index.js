@@ -85,12 +85,6 @@ function endGame(result) {
   document.getElementById("close").onclick = function () {
     modal.style.display = "none";
   }
-  // Close the modal if anything else is clicked.
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
   // No winner.
   if (result == 0) {
     // Overwrite last message before game ends to stop inappropriate messages from persisting. Taunt with a giggling peepo.
