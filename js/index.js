@@ -95,13 +95,13 @@ function endGame(result) {
   if (result == 0) {
     // Overwrite last message before game ends to stop inappropriate messages from persisting. Taunt with a giggling peepo.
     chatBubble.innerHTML = "peepoGiggles";
-    document.getElementById("resultText").innerHTML = "No one guessed it correctly! " + channel + " was drawing: <b>" + wordToDraw + "</b>";
+    document.getElementById("resultText").innerHTML = "No one guessed it correctly!<br>" + channel + " was drawing: <b>" + wordToDraw + "</b>";
   }
   // Winner found.
   else {
     // Overwrite last message before game ends to stop inappropriate messages from persisting. Cheer with a clapping peepo.
     chatBubble.innerHTML = "HYPERS";
-    document.getElementById("resultText").innerHTML = winnerName + " guessed it correctly! " + channel + " was drawing: <b>" + wordToDraw + "</b>";
+    document.getElementById("resultText").innerHTML = winnerName + " guessed it correctly in " + (30 - seconds) +" seconds!<br>" + channel + " was drawing: <b>" + wordToDraw + "</b>";
   }
 }
 
