@@ -7,7 +7,7 @@ const wordList = ["airplane", "alarm", "ambulance", "angel", "ant", "anvil", "ap
  */
 function revealChoices() {
   // Pick 2 words randomly from the word list.
-  wordListSample = _.sample(wordList, 2)
+  wordListSample = _.sample(wordList, 3)
   // Hide reveal button after it is clicked.
   document.getElementById("revealButton").style.display = "none";
   // Reveal and set text of the first random word.
@@ -16,6 +16,9 @@ function revealChoices() {
   // Reveal and set text of the second random word.
   document.getElementById("choiceTwo").innerHTML = wordListSample[1];
   document.getElementById("choiceTwo").style.display = "block";
+  // Reveal and set text of the third random word.
+  document.getElementById("choiceThree").innerHTML = wordListSample[2];
+  document.getElementById("choiceThree").style.display = "block";
 }
 
 /**
@@ -24,14 +27,10 @@ function revealChoices() {
  * @param {number} choice Identifier of the word selected by the user.
  */
 function userSelected(choice) {
-  // First random word is selected.
-  if (choice == 1) {
+  // One of three random words is selected.
+  if (choice < 4) {
     // Call the startGame function on the parent tab/window.
-    window.opener.startGame(wordListSample[0]);
-  }
-  // Second random word is selected.
-  else if (choice == 2) {
-    window.opener.startGame(wordListSample[1]);
+    window.opener.startGame(wordListSample[choice - 1]);
   }
   // Custom word is selected.
   else {
