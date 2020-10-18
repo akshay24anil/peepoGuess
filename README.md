@@ -1,5 +1,5 @@
 # peepoGuess
-A browser game where [Twitch](https://www.twitch.tv/) Chat guesses their streamer's drawings.
+A browser game where [Twitch](https://www.twitch.tv/) Chat guesses their streamer's drawings. Hosted on https://peepoguess.app.
 
 ![Screenshot of homepage](./img/screenshot.png)
 ## About
