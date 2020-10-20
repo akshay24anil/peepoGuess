@@ -41,7 +41,8 @@ function userSelected(choice) {
       return;
     }
     else {
-      window.opener.startGame(customChoice);
+      // Remove leading and ending whitespaces from user input.
+      window.opener.startGame(customChoice.trim());
     }
   }
   // Close word.html tab after starting the game.

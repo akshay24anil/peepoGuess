@@ -54,7 +54,7 @@ a, a:visited {
 }
 
 .sideMenu {
-    outline: #1E1E1E solid 1px;
+    outline: #2D2D2D solid 1px;
     width: 320px;
     height: 100%;
     position: fixed;
@@ -69,10 +69,22 @@ a, a:visited {
 }
 
 .name, .topBar {
-    outline: #1E1E1E solid 1px;
+    outline: #2D2D2D solid 1px;
+    background: #121212;
     text-align: center;
     padding: 8px;
     height: 48px;
+}
+
+.lettersBar {
+    border-top: #2D2D2D solid 1px;
+    background: #121212;
+    text-align: center;
+    padding-top: 8px;
+    height: 48px;
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 320px);
 }
 
 .leftContents {

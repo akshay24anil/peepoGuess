@@ -2,6 +2,12 @@
 var channel = "";
 // Word chosen by streamer to draw.
 var wordToDraw = "";
+// Word chosen represented as an array.
+var wordArray = null;
+// Holds order of letters to be revealed as hints.
+var hintOrder = null;
+// Holds hint.
+var hintText = "";
 // Instantiate client.
 const { api, chat } = new TwitchJs({log: { enabled: false, clientId: "49umig77cr4nifzsl6tno3bb3w44n3" }});
 // Amount of seconds user has left to draw.
@@ -41,6 +47,15 @@ function verifyChannel(channelName) {
 function startGame(chosenWord) {
   // Convert chosenWord to lowercase to simplify comparison with guesses and sanitize.
   wordToDraw = DOMPurify.sanitize(chosenWord.toLowerCase());
+  // Turn the chosen word into an array.
+  wordArray = wordToDraw.split();
+  // Temporarily hold length of word so it doesn't need to be calculated multiple times.
+  var wordLen = chosenWord.length;
+  // Randomize an array of indicies to determine order of letters revealed as hints.
+  hintOrder = _.sample(_.range(wordLen), wordLen);
+  // Initialize the hint text to (wordLen * "_")
+  hintText = _.range(wordLen).map(function () { return '_' });
+  document.getElementById("blankSpaces").innerHTML = hintText.join(" ");
   // Start the timer after a word is chosen. Round length can be modified by passing a different argument. 
   startTimer(30);
   // Clear the canvas at the start of every round.
@@ -135,5 +150,17 @@ function timer() {
   }
   else {
     timerTxt.innerHTML = "00:" + seconds;
+  }
+
+  // Reveal some of the letters during the last 15 seconds of the round.
+  if (seconds < 15 && seconds % Math.floor(25 / wordToDraw.length) == 0) {
+    // Retrieve random index of letter to reveal.
+    var letter = wordToDraw[hintOrder[0]];
+    // Keep spaces as underlines to make the hint easier to read.
+    if (letter != " ")
+      hintText[hintOrder[0]] = wordToDraw[hintOrder[0]];
+    document.getElementById("blankSpaces").innerHTML = hintText.join(" ");
+    // Shift random indicies to get next value as first element.
+    hintOrder.shift();
   }
 }
