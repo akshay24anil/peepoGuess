@@ -61,6 +61,8 @@ function eraser() {
     ctx.globalCompositeOperation = "destination-out";
     // Widen the drawing line to make it easer to erase.
     ctx.lineWidth = 32;
+    document.getElementById("pencilButton").style.backgroundColor = "#2D2D2D";
+    document.getElementById("eraserButton").style.backgroundColor = "#558A3A";
 }
 
 /**
@@ -70,15 +72,17 @@ function pencil() {
     ctx.globalCompositeOperation = "source-over";
     // Reset the line width to 16 in case an eraser was used.
     ctx.lineWidth = 16;
+    document.getElementById("pencilButton").style.backgroundColor = "#558A3A";
+    document.getElementById("eraserButton").style.backgroundColor = "#2D2D2D";
 }
 
 /**
- * Clear the canvas and set the radio focus back to the pencil tool.
+ * Clear the canvas and set the button focus back to the pencil tool.
  */
 function clearDrawing() {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     // Set focus back to the pencil tool
-    document.getElementById("pencilButton").checked = true;
+    document.getElementById("pencilButton").style.backgroundColor = "#558A3A";
     pencil();
-    document.getElementById("clearButton").checked = false;
+    document.getElementById("eraserButton").style.backgroundColor = "#2D2D2D";
 }

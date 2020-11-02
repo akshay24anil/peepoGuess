@@ -116,35 +116,31 @@ a, a:visited {
     cursor: crosshair;
 }
 
-.radio-toolbar {
-    margin: 10px;
-}
-
-.radio-toolbar input[type="radio"] {
-    position: fixed;
-    width: 0;
-}
-
-.radio-toolbar label {
-    display: inline-block;
-    background-color: #121212;
-    padding: 10px 20px;
-    border: 2px solid #2D2D2D;
-    border-radius: 4px;
-    cursor: pointer;
+.btn-group button {
+    background-color: #2D2D2D;
+    border: 1px solid #558A3A;
     color: white;
-}
-
-.radio-toolbar label:hover {
-    background-color: #446D2E;
-}
-
-.radio-toolbar input[type="radio"]:checked+label {
-    background-color: #558A3A;
-    border: 2px solid #558A3A;
-    cursor: default;
-}
-
+    padding: 10px 24px;
+    cursor: pointer;
+    float: left;
+    width: 33.3%;
+    outline: none;
+  }
+  
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-right: none;
+  }
+  
+  .btn-group button:hover {
+    background-color: #446D2E !important;;
+  }
+  
 .modal {
     display: none;
     position: fixed;
