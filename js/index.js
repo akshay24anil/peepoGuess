@@ -100,6 +100,8 @@ function endGame(result) {
   document.getElementById("close").onclick = function () {
     modal.style.display = "none";
   }
+  // Reveal the entire word at the end of the round.
+  document.getElementById("blankSpaces").innerHTML = wordToDraw.split('').join(' ');
   // No winner.
   if (result == 0) {
     // Overwrite last message before game ends to stop inappropriate messages from persisting. Taunt with a giggling peepo.
@@ -108,9 +110,9 @@ function endGame(result) {
   }
   // Winner found.
   else {
-    // Overwrite last message before game ends to stop inappropriate messages from persisting. Cheer with a clapping peepo.
+    // Overwrite last message before game ends to stop inappropriate messages from persisting. Cheer with a happy peepo.
     chatBubble.innerHTML = "HYPERS";
-    document.getElementById("resultText").innerHTML = winnerName + " guessed it correctly in " + (30 - seconds) +" seconds!<br>" + channel + " was drawing: <b>" + wordToDraw + "</b>";
+    document.getElementById("resultText").innerHTML = winnerName + " guessed it correctly in " + (30 - seconds) +" second(s)!<br>" + channel + " was drawing: <b>" + wordToDraw + "</b>";
   }
 }
 
@@ -152,13 +154,14 @@ function timer() {
     timerTxt.innerHTML = "00:" + seconds;
   }
 
-  // Reveal some of the letters during the last 15 seconds of the round.
-  if (seconds < 15 && seconds % Math.floor(25 / wordToDraw.length) == 0) {
+  // Reveal around half of the letters during the last 15 seconds of the round.
+  if (seconds < 15 && seconds % Math.floor(15 / (wordToDraw.length / 2)) == 0) {
     // Retrieve random index of letter to reveal.
     var letter = wordToDraw[hintOrder[0]];
     // Keep spaces as underlines to make the hint easier to read.
-    if (letter != " ")
+    if (letter != " ") {
       hintText[hintOrder[0]] = wordToDraw[hintOrder[0]];
+    }
     document.getElementById("blankSpaces").innerHTML = hintText.join(" ");
     // Shift random indicies to get next value as first element.
     hintOrder.shift();
