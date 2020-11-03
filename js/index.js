@@ -90,6 +90,8 @@ function startGame(chosenWord) {
  * @param {number} result Value determines if anyone guessed the drawing correctly.
  */
 function endGame(result) {
+  // Stop timer.
+  clearInterval(counter);
   // Re-enable the start button once the game ends.
   document.getElementById("startButton").disabled = false;
   // Live messages no longer needed, close connection with the Twitch chat.

@@ -42,11 +42,11 @@ button {
     margin-bottom: 8px;
     padding: 8px;
     width: 100%;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #446D2E;
-    cursor: pointer;
+    background-color: #446D2E !important;
 }
 
 a, a:visited {
@@ -119,27 +119,20 @@ a, a:visited {
 .btn-group button {
     background-color: #2D2D2D;
     border: 1px solid #558A3A;
-    color: white;
-    padding: 10px 24px;
-    cursor: pointer;
     float: left;
     width: 33.3%;
     outline: none;
-  }
-  
-  .btn-group:after {
+}
+
+.btn-group:after {
     content: "";
     clear: both;
     display: table;
-  }
-  
-  .btn-group button:not(:last-child) {
+}
+
+.btn-group button:not(:last-child) {
     border-right: none;
-  }
-  
-  .btn-group button:hover {
-    background-color: #446D2E !important;;
-  }
+}
   
 .modal {
     display: none;
