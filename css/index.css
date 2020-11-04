@@ -1,13 +1,13 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto Mono', monospace;
+    color: #FEFEFF;
 }
 
 body, html {
     background: #121212;
-    color: #D9D9D9;
     overflow: hidden;
-    font-family: 'Roboto Mono', monospace;
     min-width: 550px;
     -webkit-user-select: none;
     -moz-user-select: -moz-none;
@@ -22,8 +22,6 @@ img {
 
 input {
     outline: 0;
-    color: white;
-    font-family: 'Roboto Mono', monospace;
     border: 0px;
     background: #2D2D2D;
     display: inline-block;
@@ -36,8 +34,6 @@ input {
 
 button {
     background-color: #558A3A;
-    color: white;
-    font-family: 'Roboto Mono', monospace;
     border: none;
     margin-bottom: 8px;
     padding: 8px;
@@ -101,6 +97,10 @@ a, a:visited {
     padding: 24px;
 }
 
+.bubble-top-left {
+    clear: right;
+}
+
 .bubble-top-left:before {
     content: "";
     position: absolute;
@@ -114,6 +114,10 @@ a, a:visited {
 
 #canvas {
     cursor: crosshair;
+}
+
+.btn-group {
+    width: 100%;
 }
 
 .btn-group button {
@@ -133,7 +137,7 @@ a, a:visited {
 .btn-group button:not(:last-child) {
     border-right: none;
 }
-  
+
 .modal {
     display: none;
     position: fixed;
@@ -144,7 +148,7 @@ a, a:visited {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0, 0, 0);
+    background-color: black;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -152,13 +156,11 @@ a, a:visited {
     background-color: #2D2D2D;
     margin: auto;
     padding: 20px;
-    color: white;
     text-align: center;
     width: 40%;
 }
 
 #close {
-    color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -171,4 +173,13 @@ a, a:visited {
     bottom: 8px;
     width: 320px;
     text-align: center;
+}
+
+.choices {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    width: 40%;
 }

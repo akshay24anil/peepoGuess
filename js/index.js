@@ -9,7 +9,7 @@ var hintOrder = null;
 // Holds hint.
 var hintText = "";
 // Instantiate client.
-const { api, chat } = new TwitchJs({log: { enabled: false, clientId: "49umig77cr4nifzsl6tno3bb3w44n3" }});
+const { api, chat } = new TwitchJs({ log: { enabled: false, clientId: "49umig77cr4nifzsl6tno3bb3w44n3" } });
 // Amount of seconds user has left to draw.
 var seconds = 0;
 // Initialize counter to null so countdown doesn't happen at page load.
@@ -103,7 +103,7 @@ function endGame(result) {
     modal.style.display = "none";
   }
   // Reveal the entire word at the end of the round.
-  document.getElementById("blankSpaces").innerHTML = wordToDraw.split('').join(' ');
+  document.getElementById("blankSpaces").innerHTML = wordToDraw.replace(' ', '_').split('').join(' ');
   // No winner.
   if (result == 0) {
     // Overwrite last message before game ends to stop inappropriate messages from persisting. Taunt with a giggling peepo.
@@ -114,7 +114,7 @@ function endGame(result) {
   else {
     // Overwrite last message before game ends to stop inappropriate messages from persisting. Cheer with a happy peepo.
     chatBubble.innerHTML = "HYPERS";
-    document.getElementById("resultText").innerHTML = winnerName + " guessed it correctly in " + (30 - seconds) +" second(s)!<br>" + channel + " was drawing: <b>" + wordToDraw + "</b>";
+    document.getElementById("resultText").innerHTML = winnerName + " guessed it correctly in " + (30 - seconds) + " second(s)!<br>" + channel + " was drawing: <b>" + wordToDraw + "</b>";
   }
 }
 

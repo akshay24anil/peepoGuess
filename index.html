@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
     <title>peepoGuess</title>
@@ -26,22 +25,27 @@
         <div class="leftContents">
             <h3>Twitch Chat guesses their streamer's drawings.</h3>
             <br>
+            
             <input type="text" id="channelName" placeholder="Channel Name">
             <button type="button" id="startButton"
-                onclick="verifyChannel(document.getElementById('channelName').value)">Start</button>
-            <div class="btn-group" style="width:100%">
-              <button id="pencilButton" onclick="pencil()" style="background-color: #558A3A;">Draw</button>
-              <button id="eraserButton" onclick="eraser()">Erase</button>
-              <button id="clearButton" onclick="clearDrawing()">Clear</button>
+                onclick="verifyChannel(document.getElementById('channelName').value)">
+                Start
+            </button>
+
+            <div class="btn-group">
+                <button id="pencilButton" onclick="pencil()" style="background-color: #558A3A;">Draw</button>
+                <button id="eraserButton" onclick="eraser()">Erase</button>
+                <button id="clearButton" onclick="clearDrawing()">Clear</button>
             </div>
+
             <img src="/img/peepoChat.gif" style="float: right;">
-            <div class="bubble bubble-top-left" style="clear:right">
+            <div class="bubble bubble-top-left">
                 <div id="chatEntered">PauseChamp</div>
             </div>
 
-            <div class="footer">
-                <a href="https://github.com/akshay24anil/peepoGuess" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
-            </div>
+            <a class="footer" href="https://github.com/akshay24anil/peepoGuess" target="_blank" rel="noopener noreferrer">
+                Source on GitHub
+            </a>
         </div>
 
     </div>
@@ -60,7 +64,7 @@
 
         <div class="rightContents">
             <canvas id="canvas"></canvas>
-            
+
             <div id="resultModal" class="modal">
                 <div class="modal-content">
                     <span id="close">&times;</span>
